@@ -1,5 +1,5 @@
 {% set name = "facexlib" %}
-{% set version = "0.2.5" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/facexlib-{{ version }}.tar.gz
-  sha256: 31e20cc4ed5d63562d380e4564bae14ac0d5d1899a079bad87621e13564567e4
+  sha256: 7ae784a520eb52e05583e8bf9f68f77f45083239ac754d646d635017b49e7763
 
 build:
   noarch: python
