@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/facexlib-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/facexlib-{{ version }}.tar.gz
   sha256: 7ae784a520eb52e05583e8bf9f68f77f45083239ac754d646d635017b49e7763
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - cython
     - numpy
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - filterpy
     - numba
     - numpy
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/xinntao/facexlib
